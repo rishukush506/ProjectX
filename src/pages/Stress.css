@@ -1,0 +1,78 @@
+/* Page layout */
+.container {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #f9f9f9;
+  padding: 20px;
+}
+
+.form-box {
+  max-width: 600px;
+  width: 100%;
+  background: #fff;
+  padding: 25px 30px;
+  border-radius: 12px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+  text-align: left;
+}
+
+/* Typography */
+.intro-text {
+  font-size: 14px;
+  color: #555;
+  margin-bottom: 15px;
+}
+
+.title {
+  font-size: 22px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.question {
+  font-weight: 600;
+  margin-bottom: 15px;
+  color: #444;
+}
+
+/* Slider block */
+.slider-block {
+  margin-bottom: 20px;
+}
+
+.slider-label {
+  display: block;
+  margin-bottom: 10px;
+  font-size: 15px;
+  color: #333;
+}
+
+.slider {
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.slider-value {
+  font-size: 14px;
+  color: #666;
+}
+
+/* Button */
+.save-btn {
+  width: 100%;
+  padding: 12px;
+  background: #007bff;
+  color: white;
+  font-size: 16px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.save-btn:hover {
+  background: #0056b3;
+}

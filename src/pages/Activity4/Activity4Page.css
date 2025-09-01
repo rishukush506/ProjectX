@@ -1,0 +1,68 @@
+/* Container */
+.activity4-container {
+  min-height: 100vh;
+  background-color: #f3f4f6; /* light gray */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 32px;
+}
+
+/* Header text */
+.activity4-header {
+  max-width: 750px;
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+.activity4-header p {
+  color: #374151; /* dark gray */
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+/* Grid layout */
+.activity4-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+  width: 100%;
+  max-width: 1200px;
+}
+
+@media (min-width: 768px) {
+  .activity4-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Each column */
+.activity4-column {
+  display: flex;
+  flex-direction: column;
+}
+
+.activity4-column h2 {
+  color: #1f2937; /* very dark gray */
+  font-weight: 600;
+  margin-bottom: 12px;
+  font-size: 1.1rem;
+}
+
+/* Input (textarea) styling */
+.activity4-input {
+  border: 2px solid #9ca3af; /* gray border */
+  background-color: #ffffff;
+  height: 280px;
+  border-radius: 8px;
+  padding: 12px;
+  font-size: 1rem;
+  resize: none;
+  transition: all 0.2s ease;
+}
+
+.activity4-input:focus {
+  outline: none;
+  border-color: #2563eb; /* blue focus */
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}

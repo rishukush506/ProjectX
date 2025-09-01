@@ -1,0 +1,190 @@
+.activity3b-container {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 20px;
+  font-family: "Arial", sans-serif;
+  line-height: 1.6;
+background-color: #f9fafb;
+}
+
+.page-box {
+  max-width: 900px;
+  width: 100%;
+  background: #ffffff;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+  border-radius: 16px;
+  padding: 32px;
+}
+
+.intro-text {
+  font-size: 1rem;
+  color: #555;
+  margin-bottom: 1rem;
+  font-style: italic;
+}
+
+.section-title {
+  font-size: 1.4rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: #2c3e50;
+}
+
+.description {
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+
+.instruction {
+  font-size: 1rem;
+  margin: 1rem 0;
+  text-align: left;
+}
+
+.highlight-text {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #00695c;
+  margin: 1rem 0;
+}
+
+.thought-plants {
+  display: flex;
+  gap: 2rem;
+  margin: 1.5rem 0;
+}
+
+.plant {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+}
+
+.plant-number {
+  display: inline-block;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: white;
+  background: gray;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 28px;
+}
+
+.plant-number.green {
+  background: #2e7d32;
+}
+
+.plant-number.orange {
+  background: #ef6c00;
+}
+
+.speech {
+  background: #e0e0e0;
+  padding: 0.7rem 1rem;
+  border-radius: 12px;
+  max-width: 260px;
+  font-size: 0.95rem;
+}
+
+.input-grid {
+  margin-top: 1.5rem;
+  display: grid;
+  gap: 1rem;
+}
+
+.input-box {
+  display: flex;
+  flex-direction: column;
+}
+
+.label {
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+  border: none;
+}
+
+img.thoughts-image{
+  width: 300px;
+  object-fit:contain;
+}
+
+input{
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 0.6rem;
+  font-size: 1rem;
+  outline: none;
+  transition: border 0.2s;
+  max-width: 97%;
+}
+
+textarea {
+   border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 0.6rem;
+  font-size: 1rem;
+  outline: none;
+  transition: border 0.2s;
+  max-width: 97%; 
+}
+
+
+input:focus, textarea:focus {
+  border-color: #34d399;
+  background-color: #ecfdf5;
+  outline: none;
+}
+
+textarea {
+  min-height: 80px;
+  resize: vertical;
+}
+
+.footer-note {
+  margin-top: 1rem;
+  font-size: 0.85rem;
+  color: #666;
+}
+
+.next-btn {
+  background-color: #34d399;
+  color: white;
+  padding: 10px 20px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.next-btn:hover {
+  background-color: #059669;
+}
+
+.reflection-section{
+  width: 100%;
+}
+
+.image-wrapper{
+  width: 50%;
+  height: max-content;
+}
+
+img.thoughts-image{
+  width: fit-content;
+  /* object-fit:contain; */
+}
+
+
+.upperText {
+  display: flex;
+}
+
+.insideText1,
+.insideText2 {
+  flex: 1; /* Each takes up 50% of the parent */
+  padding: 0.5rem; /* Optional: adds spacing inside each box */
+}

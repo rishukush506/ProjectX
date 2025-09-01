@@ -1,0 +1,87 @@
+.form-container {
+  max-width: 650px;
+  margin: 50px auto;
+  padding: 25px 30px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+  text-align: left;
+  font-family: Arial, sans-serif;
+}
+
+.title {
+  font-size: 26px;
+  color: #333;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.subtitle {
+  font-size: 15px;
+  color: #666;
+  line-height: 1.6;
+  margin-bottom: 25px;
+  text-align: justify;
+}
+
+.form-label {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 15px;
+  font-weight: 600;
+  color: #444;
+}
+
+.input-box,
+.dropdown {
+  width: 100%;
+  padding: 10px 12px;
+  font-size: 15px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  margin-bottom: 20px;
+  outline: none;
+  transition: border 0.3s ease;
+}
+
+.input-box:focus,
+.dropdown:focus {
+  border-color: #007bff;
+}
+
+.button-group {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 15px;
+}
+
+.btn {
+  flex: 1;
+  padding: 12px;
+  font-size: 16px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  margin: 0 5px;
+  transition: background 0.3s ease;
+}
+
+.save-btn {
+  background: #28a745;
+  color: white;
+}
+
+.save-btn:hover {
+  background: #218838;
+}
+
+.next-btn {
+  background: #007bff;
+  color: white;
+}
+
+.next-btn:hover {
+  background: #0056b3;
+}
+
+

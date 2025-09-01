@@ -1,0 +1,79 @@
+.activity5b-container {
+   max-width: 800px;
+  margin: 40px auto;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.header-text {
+  margin-bottom: 20px;
+}
+
+.header-text h3 {
+  margin: 10px 0;
+  color: #2e5aac;
+}
+
+.thoughts-boxes {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  margin: 20px 0;
+}
+
+.thought-box {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.thought-box label {
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+.thought-box textarea {
+  width: 100%;
+  height: 200%;
+  padding: 12px;
+  font-size: 16px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  resize: none;
+  box-sizing: border-box;
+}
+
+
+.activity5b-image {
+  width: 50%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+
+.note-text {
+  font-size: 12px;
+  color: #555;
+  margin-top: 10px;
+}
+
+.next-btn {
+  margin-top: 20px;
+  background: #2e5aac;
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background 0.3s ease;
+}
+
+.next-btn:hover {
+  background: #234682;
+}
