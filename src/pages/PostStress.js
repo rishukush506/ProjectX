@@ -1,7 +1,7 @@
 import React, { useState, useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import { UserContext } from "./UserContext";
-import "./Stress.css";
+import "./PostStress.css";
 
 function Stress() {
   const { setUserData } = useContext(UserContext);
@@ -19,7 +19,7 @@ function Stress() {
   const handleSaveAndNext = () => {
     if (touched) {
       setUserData((prev) => ({ ...prev, sliderValue: value }));
-      navigate("/questions");
+      navigate("/questionspost");
     } else {
       setError(true);
     }
@@ -36,7 +36,7 @@ function Stress() {
           I appreciate you opening up about this. Whatever you're going through, 
           your feelings are important. I'm here with you.
         </h5>
-        <h2 className="title">Reflecting on your situation</h2>
+        <h2 className="title">After Completing the Activity</h2>
         <h1 className="question">How much stress is it causing you?</h1>
 
         <div className="slider-block">

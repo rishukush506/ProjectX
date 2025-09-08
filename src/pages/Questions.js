@@ -164,7 +164,7 @@ const influenceBeliefOptions = [
           I appreciate you opening up about this. Whatever you’re going through,
           your feelings are important. I'm here with you.
         </h5>
-        <h2 className="title">Reflection on your situation</h2>
+        <h2 className="title">Based on your situation</h2>
 
         {/* Question 1 */}
 <div className="question-block">

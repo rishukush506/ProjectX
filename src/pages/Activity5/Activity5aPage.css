@@ -114,6 +114,19 @@
 
 .image-section img {
   height: 100%; /* Match textarea height */
-  width: 150%;
+  width: 100%;
   object-fit:contain ;
 }
+
+.image-section img {
+  width: 100%;         /* Makes the image fill its container */
+  max-width: 400px;    /* Increase this value to make it larger */
+  height: auto;        /* Maintain aspect ratio */
+}
+.image-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 16px 0;
+}
+

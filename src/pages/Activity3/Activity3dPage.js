@@ -1,13 +1,26 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Activity3dPage.css";
 import { useNavigate } from "react-router-dom";
-import img1 from "./images/UI-4.png"; // Replace with your actual image path
+import img1 from "./images/UI-4.png";
 
 const Activity3dPage = () => {
   const navigate = useNavigate();
+  const [reflection, setReflection] = useState("");
+  const [error, setError] = useState(false);
+
+  const handleTextareaChange = (e) => {
+    setReflection(e.target.value);
+    if (e.target.value.trim()) {
+      setError(false);
+    }
+  };
 
   const goToNextPage = () => {
-    navigate("/questionspost"); // Update route as needed
+    if (reflection.trim()) {
+      navigate("/poststress");
+    } else {
+      setError(true);
+    }
   };
 
   return (
@@ -16,17 +29,8 @@ const Activity3dPage = () => {
         <div className="activity3d-content">
           <div className="activity3d-left">
             <h3 className="activity3d-title">Plants are drooping</h3>
-            <p className="activity3d-description">
-              You’re not sure why your garden is not growing like it used to grow.
-              Let’s try to take one step at a time & name exactly what we see.
-            </p>
           </div>
-          <div className="activity3d-right">
-            <p className="activity3d-support">
-              I appreciate you opening up about this. Whatever you’re going through,
-              your feelings are important. I’m here with you...
-            </p>
-          </div>
+          <div className="activity3d-right"></div>
         </div>
 
         <div className="activity3d-question">
@@ -41,10 +45,17 @@ const Activity3dPage = () => {
             </div>
             <div className="textarea-wrapper">
               <textarea
-                className="activity3d-textarea"
+                className={`activity3d-textarea ${error ? "error-border" : ""}`}
                 rows="6"
-                placeholder="You can write down your thoughts here..."
+                placeholder="Write here..."
+                value={reflection}
+                onChange={handleTextareaChange}
               />
+              {error && (
+                <p className="error-message">
+                  Please share your thoughts before continuing.
+                </p>
+              )}
             </div>
           </div>
         </div>

@@ -2,10 +2,12 @@ import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import FormPage from "./pages/FormPage";
 import Stress  from "./pages/Stress";
+import PostStress  from "./pages/PostStress";
 import { UserProvider } from "./pages/UserContext"; 
 import DisplayPage from "./pages/Display";
 import Questions from "./pages/Questions";
 import PostQuestions from "./pages/PostQuestions";
+import Situation from "./pages/Situation";
 
 import Activity2Page from "./pages/Activity2Page";
 
@@ -30,6 +32,7 @@ import Activity5aPage from "./pages/Activity5/Activity5aPage";
 import Activity5bPage from "./pages/Activity5/Activity5bPage";
 import Activity5cPage from "./pages/Activity5/Activity5cPage";
 import Activity5dPage from "./pages/Activity5/Activity5dPage";
+// import Situation from "./pages/Situation";
 
 
 function GroupPage({ group }) {
@@ -48,8 +51,10 @@ function App() {
       <Routes>
         <Route path="/" element={<FormPage />} />
         <Route path="/stress" element={<Stress />} />
+        <Route path="/poststress" element={<PostStress />} />
         <Route path="/display" element={<DisplayPage />} />
         <Route path="/questions" element={<Questions />} />
+        <Route path="/situation" element={<Situation />} />
         <Route path="/questionspost" element={<PostQuestions />} />
         {/* Group Activity Pages */}
         <Route path="/activity1a" element={<Activity1aPage />} />

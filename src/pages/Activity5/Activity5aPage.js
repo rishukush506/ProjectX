@@ -1,13 +1,26 @@
-import React from "react";
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./Activity5aPage.css";
-import img1 from "./images/DC-1.png"
+import img1 from "./images/DCArtboard 1.png";
 
 const Activity5aPage = () => {
   const navigate = useNavigate();
+  const [thoughts, setThoughts] = useState("");
+  const [error, setError] = useState(false);
+
+  const handleChange = (e) => {
+    setThoughts(e.target.value);
+    if (e.target.value.trim()) {
+      setError(false);
+    }
+  };
 
   const goToNext = () => {
-    navigate("/activity5b");
+    if (thoughts.trim()) {
+      navigate("/activity5b");
+    } else {
+      setError(true);
+    }
   };
 
   return (
@@ -25,27 +38,26 @@ const Activity5aPage = () => {
         </p>
       </div>
 
-      {/* <div className="question-section">
-        <h2>What exactly is happening in this situation?</h2>
-        <p>
-          Let’s start by listing some thoughts about this situation...
-        </p>
-        <textarea className="thoughts-box"></textarea>
-      </div> */}
       <div className="question-section">
         <h2>What exactly is happening in this situation?</h2>
         <p>Let’s start by listing some thoughts about this situation...</p>
 
         <div className="thoughts-wrapper">
           <textarea
-            className="thoughts-box"
-            placeholder="Write your thoughts here..."
-          ></textarea>
+            className={`thoughts-box ${error ? "error-border" : ""}`}
+            placeholder="Write here..."
+            value={thoughts}
+            onChange={handleChange}
+          />
           <div className="image-section">
-                    <img src={img1} alt="Right visual" />
-                  </div>
-
+            <img src={img1} alt="Right visual" />
+          </div>
         </div>
+        {error && (
+          <p className="error-message">
+            Please share your thoughts before continuing.
+          </p>
+        )}
       </div>
 
       <p className="note">
@@ -57,7 +69,6 @@ const Activity5aPage = () => {
         Next →
       </button>
     </div>
-    
   );
 };
 

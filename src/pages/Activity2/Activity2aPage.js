@@ -5,9 +5,14 @@ import img1 from "./images/flower-roots.PNG";
 
 export default function Activity2aPage() {
   const [thoughts, setThoughts] = useState("");
+  const [error, setError] = useState(false);
   const navigate = useNavigate();
 
   const handleNext = () => {
+    if (thoughts.trim() === "") {
+      setError(true);
+      return;
+    }
     navigate("/activity2b");
   };
 
@@ -31,16 +36,25 @@ export default function Activity2aPage() {
         </h3>
 
         <div className="response-image-wrapper">
-  <textarea
-    className="response-box"
-    value={thoughts}
-    onChange={(e) => setThoughts(e.target.value)}
-    placeholder="Write your thoughts..."
-  />
-  <div className="image-section">
-    <img src={img1} alt="Right visual" />
-  </div>
-</div>
+          <textarea
+            className={`response-box ${error ? "error-border" : ""}`}
+            value={thoughts}
+            onChange={(e) => {
+              setThoughts(e.target.value);
+              if (error) setError(false);
+            }}
+            placeholder="Write your thoughts..."
+          />
+          <div className="image-section">
+            <img src={img1} alt="Right visual" />
+          </div>
+        </div>
+
+        {error && (
+          <p className="error-message">
+            Please share your grounding thoughts before continuing.
+          </p>
+        )}
 
         <p className="footer-note">
           ℹ️ No textual data will be stored; you may express freely in whichever

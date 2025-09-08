@@ -59,8 +59,8 @@ const Activity2Page = () => {
           Based on your stressful situation...
         </h1>
         <p className="activity-subtitle">
-          Below are metaphors of a garden that describes the activity. Select
-          one activity that you would like to do?
+          Below are metaphors of a garden that describes your situation. Select
+          the one appropriate for you
         </p>
 
         <div className="activity-grid">

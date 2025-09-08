@@ -1,4 +1,3 @@
-// src/pages/Activity4Page.jsx
 import React, { useState } from "react";
 import "./Activity4Page.css";
 import { useNavigate } from "react-router-dom";
@@ -6,17 +5,26 @@ import { useNavigate } from "react-router-dom";
 const Activity4Page = () => {
   const navigate = useNavigate();
 
-    const goToNextPage = () => {
-        navigate("/questionspost") // Change it to post stress
-    };
   const [formData, setFormData] = useState({
     event: "",
     belief: "",
     consequence: "",
   });
 
+  const [error, setError] = useState(false);
+
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
+    if (e.target.value.trim()) setError(false);
+  };
+
+  const goToNextPage = () => {
+    const { event, belief, consequence } = formData;
+    if (event.trim() && belief.trim() && consequence.trim()) {
+      navigate("/poststress"); // Update route as needed
+    } else {
+      setError(true);
+    }
   };
 
   return (
@@ -38,7 +46,7 @@ const Activity4Page = () => {
             name="event"
             value={formData.event}
             onChange={handleChange}
-            className="activity4-input"
+            className={`activity4-input ${error && !formData.event.trim() ? "error-border" : ""}`}
             placeholder="Describe the event..."
           />
         </div>
@@ -50,7 +58,7 @@ const Activity4Page = () => {
             name="belief"
             value={formData.belief}
             onChange={handleChange}
-            className="activity4-input"
+            className={`activity4-input ${error && !formData.belief.trim() ? "error-border" : ""}`}
             placeholder="What were your thoughts or beliefs?"
           />
         </div>
@@ -62,16 +70,23 @@ const Activity4Page = () => {
             name="consequence"
             value={formData.consequence}
             onChange={handleChange}
-            className="activity4-input"
+            className={`activity4-input ${error && !formData.consequence.trim() ? "error-border" : ""}`}
             placeholder="How did you feel or react?"
           />
         </div>
       </div>
+
+      {error && (
+        <p className="error-message">
+          Please complete all three sections before continuing.
+        </p>
+      )}
+
       <div className="button-container">
-          <button className="next-button" onClick={goToNextPage}>
-            Next →
-          </button>
-        </div>
+        <button className="next-button" onClick={goToNextPage}>
+          Next →
+        </button>
+      </div>
     </div>
   );
 };

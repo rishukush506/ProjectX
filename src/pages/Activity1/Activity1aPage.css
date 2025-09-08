@@ -14,7 +14,7 @@
   background: #ffffff;
   box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
   border-radius: 16px;
-  padding: 32px;
+  /* padding: 32px; */
 }
 
 .intro-text {
@@ -120,3 +120,33 @@
   object-fit: cover;
 }
 
+.page-container {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  text-align: left;
+}
+
+.page-box {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  /* padding: 20px; */
+  text-align: left;
+}
+
+.intro-text,
+.section-title,
+.section-text,
+.question-text,
+.footer-note {
+  text-align: left;
+}
+
+.response-box {
+  width: 100%;
+  text-align: left;
+}
+.intro-text {
+  text-align: left !important;
+}

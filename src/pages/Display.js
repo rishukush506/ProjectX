@@ -10,13 +10,15 @@ function Display() {
     `Participant ID: ${userData?.participantId || "Not provided"}
 Group: ${userData?.group || "Not provided"}
 
---- Responses ---
-Q1: ${userData?.answers?.q1 || "Not answered"}
-Q2: ${userData?.answers?.q2 || "Not answered"}
-Q3: ${userData?.answers?.q3 || "Not answered"}
-Q4: ${userData?.answers?.q4 || "Not answered"}
-Q5: ${userData?.answers?.q5 || "Not answered"}
-Q6: ${userData?.answers?.q6 || "Not answered"}`
+--- Pre Responses ---
+Q1: ${userData?.answers1?.q1 || "Not answered"}
+Q2: ${userData?.answers1?.q2 || "Not answered"}
+Q3: ${userData?.answers1?.q3 || "Not answered"}
+
+--- Post Responses ---
+Q1: ${userData?.answers2?.q4 || "Not answered"}
+Q2: ${userData?.answers2?.q5 || "Not answered"}
+Q3: ${userData?.answers2?.q6 || "Not answered"}`
   );
 
   return (
@@ -46,7 +48,7 @@ Q6: ${userData?.answers?.q6 || "Not answered"}`
       <div className="button-container" style={{ marginLeft: "100px" }}>
         {/* Send Mail Button */}
         <a
-          href={`mailto:pawansirsulla111@gmail.com?subject=${subject}&body=${body}`}
+          href={`mailto:wellbeingresearch07@gmail.com?subject=${subject}&body=${body}`}
           className="next-button"
           
         >

@@ -1,40 +1,53 @@
-import React from "react";
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./Activity2cPage.css";
 import img1 from "./images/EA-3.png";
 
 const Activity2cPage = () => {
+  const [response, setResponse] = useState("");
+  const [error, setError] = useState(false);
   const navigate = useNavigate();
+
+  const handleNext = () => {
+    if (response.trim() === "") {
+      setError(true);
+      return;
+    }
+    navigate("/activity2d");
+  };
 
   return (
     <div className="page-container">
       <div className="page-box">
-        {/* Intro Text */}
-        <p className="intro-text">
-          I appreciate you opening about this. Whatever you’re going through, your feelings are important. I’m here with you...
-        </p>
-
         {/* Section */}
         <h2 className="section-title">Tending to the strongest plant</h2>
-        <p className="section-text">
-          You recognizing the roots of your struggles, you actively prune away hindrances to flourish & stand tall against any storm
-        </p>
 
         {/* Question */}
         <p className="question-text">
           How can you strengthen these beliefs & make them part of your daily mental watering?
         </p>
 
-        {/* Response box with placeholder */}
+        {/* Response box */}
         <div className="response-image-wrapper">
-                  <textarea
-                    className="response-box"
-                    placeholder="Write your thoughts..."
-                  />
-                  <div className="image-section">
-                    <img src={img1} alt="Right visual" />
-                  </div>
-                </div>
+          <textarea
+            className={`response-box ${error ? "error-border" : ""}`}
+            value={response}
+            onChange={(e) => {
+              setResponse(e.target.value);
+              if (error) setError(false);
+            }}
+            placeholder="Write here..."
+          />
+          <div className="image-section">
+            <img src={img1} alt="Right visual" />
+          </div>
+        </div>
+
+        {error && (
+          <p className="error-message">
+            Please share your reflection before continuing.
+          </p>
+        )}
 
         {/* Footer */}
         <p className="footer-note">
@@ -43,10 +56,7 @@ const Activity2cPage = () => {
 
         {/* Button */}
         <div className="button-container">
-          <button
-            className="next-button"
-            onClick={() => navigate("/activity2d")}
-          >
+          <button className="next-button" onClick={handleNext}>
             Next →
           </button>
         </div>

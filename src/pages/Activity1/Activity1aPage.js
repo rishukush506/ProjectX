@@ -1,12 +1,18 @@
-import React from "react";
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./Activity1aPage.css";
-import img1 from "./images/HA-1.png";
+import img1 from "./images/ACQHA1@3x.png";
 
 export default function Activity1aPage() {
   const navigate = useNavigate();
+  const [response, setResponse] = useState("");
+  const [error, setError] = useState(false);
 
   const goToNextPage = () => {
+    if (response.trim() === "") {
+      setError(true);
+      return;
+    }
     navigate("/activity1b");
   };
 
@@ -28,11 +34,23 @@ export default function Activity1aPage() {
           What thoughts feel like weeds – persistent, unhelpful, or draining?
         </p>
         <div className="response-image-wrapper">
-          <textarea className="response-box" />
+          <textarea
+            className={`response-box ${error ? "error-border" : ""}`}
+            value={response}
+            onChange={(e) => {
+              setResponse(e.target.value);
+              if (error) setError(false);
+            }}
+            placeholder="Write here..."
+          />
           <div className="image-section">
             <img src={img1} alt="Right visual" />
           </div>
         </div>
+
+        {error && (
+          <p className="error-message">Please share your thoughts before continuing.</p>
+        )}
 
         <p className="footer-note">
           <span>ℹ️</span> No textual data will be stored; you may express freely
